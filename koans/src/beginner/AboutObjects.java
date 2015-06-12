@@ -236,7 +236,7 @@ public class AboutObjects {
 		    Именно поэтому в джаве такие "классы" называются "Анонимными".
 		    Вот как это выглядит:
 
-		        HaClass object = new Object() {         // <<< здесь Object означает уже класс от которого "анонимный" класс
+		        Object object = new Object() {         // <<< здесь Object означает уже класс от которого "анонимный" класс
 		            @Override                           // <<< (то есть часть в {}) - должен отнаследоваться
 			        public String toString() {
 				        return "ha";
@@ -244,7 +244,7 @@ public class AboutObjects {
 		        };
 		        assertEquals("ha" + object, "haha");
 
-		    сравните с тем что было (http://joxi.ru/BA0MKqGtRyV8ry):
+		    сравните с тем что было (http://joxi.ru/Vrw36GzUDdkgrX):
 
 		        class HaClass extends Object {
 		            @Override
@@ -264,7 +264,7 @@ public class AboutObjects {
             Потому что просто такой код:
 
                 String string = "ha";
-		        HaClass object = new Object() {
+		        Object object = new Object() {
 		            @Override
 			        public String toString() {
 				        return string;
@@ -278,7 +278,7 @@ public class AboutObjects {
             и она совсем не будет знать что же ей делать, если мы напишем такой вот код:
 
                 String string = "ha";
-		        HaClass object = new Object() {
+		        Object object = new Object() {
 		            @Override
 			        public String toString() {
 				        return string;
@@ -293,7 +293,7 @@ public class AboutObjects {
 		    Чтобы указать джаве что это неизменяемая переменная, достаточно добавить в ее обьявление слово final:
 
                 final String string = "ha";
-		        HaClass object = new Object() {
+		        Object object = new Object() {
 		            @Override
 			        public String toString() {
 				        return string;
